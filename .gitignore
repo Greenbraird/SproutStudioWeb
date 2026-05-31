@@ -1,0 +1,9 @@
+# Large media (use YouTube embed instead)
+*.mp4
+assets/trailer.mp4
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

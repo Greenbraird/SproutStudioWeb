@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="새싹 스튜디오(Sprout Studio) — 1인 개발자 김시준의 인디 게임 스튜디오. 대표작 'War In The Dark'는 1950년대 가상 전쟁을 배경으로 한 1-bit 턴제 도청 시뮬레이션입니다." />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="새싹 스튜디오 — War In The Dark" />
+  <meta property="og:description" content="적의 모스 신호를 도청해 아군을 지휘하라. 1-bit 턴제 도청 시뮬레이션." />
+  <meta property="og:image" content="assets/wid-logo.png" />
+  <title>새싹 스튜디오 (Sprout Studio) — War In The Dark</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="assets/sprout-logo.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="#top" class="logo" aria-label="새싹 스튜디오 home">
+        <span class="logo-mark">SPROUT</span>
+        <span class="logo-sub">STUDIO</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#game" class="nav-link">GAME</a>
+        <a href="#story" class="nav-link">STORY</a>
+        <a href="#system" class="nav-link">SYSTEM</a>
+        <a href="#screens" class="nav-link">SCREENS</a>
+        <a href="#roadmap" class="nav-link">ROADMAP</a>
+        <a href="#studio" class="nav-link">STUDIO</a>
+        <a href="#contact" class="nav-link">CONTACT</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#game" class="mobile-link">GAME</a>
+      <a href="#story" class="mobile-link">STORY</a>
+        <a href="#system" class="mobile-link">SYSTEM</a>
+        <a href="#screens" class="mobile-link">SCREENS</a>
+        <a href="#roadmap" class="mobile-link">ROADMAP</a>
+      <a href="#studio" class="mobile-link">STUDIO</a>
+      <a href="#contact" class="mobile-link">CONTACT</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" style="background-image:url('assets/hero-battlefield.png')" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="scanlines scanlines--hero" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow" data-reveal>INDEPENDENT GAME STUDIO &mdash; SOLO DEVELOPED</p>
+        <h1 class="hero-title" data-reveal>We grow stories<br />in the dark.</h1>
+        <p class="hero-sub" data-reveal>적의 모스 신호를 도청해 아군을 지휘하라.<br />1950년대 가상 전쟁, <span>1-bit 턴제 도청 시뮬레이션</span>.</p>
+      </div>
+
+      <a href="#game" class="scroll-cue" aria-label="Scroll to game">
+        <span class="scroll-line"></span>
+        <span class="scroll-arrow">&#8595;</span>
+      </a>
+    </section>
+
+    <!-- ============ GAME OVERVIEW ============ -->
+    <section class="game" id="game">
+      <div class="section-head" data-reveal>
+        <span class="section-label">FLAGSHIP TITLE</span>
+        <span class="section-count">2026 &mdash; 2027</span>
+      </div>
+
+      <div class="game-hero" data-reveal>
+        <div class="game-art">
+          <div class="game-art-img" style="background-image:url('assets/wid-logo.png')"></div>
+          <div class="scanlines" aria-hidden="true"></div>
+        </div>
+        <div class="game-intro">
+          <h2 class="game-title">WAR IN THE DARK</h2>
+          <p class="game-logline">
+            1950년대 가상의 전쟁을 배경으로, 적의 모스 신호를 도청해
+            아군을 지휘하는 <strong>1-bit 턴제 도청 시뮬레이션</strong>입니다.
+            단순한 전투가 아닌, 어둠 속 정보전의 긴장감을 직접 해독해 내는 경험.
+          </p>
+          <dl class="game-meta">
+            <div><dt>PLATFORM</dt><dd>PC · Steam</dd></div>
+            <div><dt>GENRE</dt><dd>Turn-Based War · Military Strategy</dd></div>
+            <div><dt>SCHEDULE</dt><dd>2026.10 1st CBT · 2027.01 2nd CBT · 2027 Steam</dd></div>
+          </dl>
+          <a href="#contact" class="text-btn">WISHLIST &amp; FOLLOW <span class="text-btn-arrow">&#8594;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="story" id="story">
+      <div class="story-inner">
+        <div class="story-lead" data-reveal>
+          <span class="section-label">01 &mdash; STORY</span>
+          <p class="story-text">
+            노병 <em>레마르크</em>는 병상에 누워 있다. 손자 <em>엔더슨</em>이 가져온
+            군인 시절의 빛바랜 사진 한 장. 그 사진은 도청과 감청으로 이름을 날리던
+            지휘관 시절의 기억을 깨운다. 손자에게 전쟁 이야기를 들려주는 회상 속에서,
+            모든 것은 그가 전방 제5보병사단에 처음 배치되던 그날부터 다시 시작된다.
+          </p>
+        </div>
+
+        <figure class="story-scene" data-reveal>
+          <img src="assets/story-room.png" alt="도시의 스카이라인이 내려다보이는 병실 — 회상이 시작되는 장소" loading="lazy" />
+          <figcaption>회상이 시작되는 곳 &mdash; 도시가 내려다보이는 병실</figcaption>
+        </figure>
+
+        <div class="char-grid" data-reveal>
+          <article class="char">
+            <div class="char-portrait"><img src="assets/char-remarque.png" alt="노년의 레마르크" loading="lazy" /></div>
+            <span class="char-no">CHARACTER 01</span>
+            <h3 class="char-name">레마르크 <span>REMARQUE</span></h3>
+            <p>도청·감청으로 이름을 날리던 지휘관. 퇴역 후 건강이 악화되어 병상에 누운 채, 손자에게 자신의 전쟁을 회상한다. 이 이야기의 화자.</p>
+          </article>
+          <article class="char">
+            <div class="char-portrait"><img src="assets/char-anderson.png" alt="손자 엔더슨" loading="lazy" /></div>
+            <span class="char-no">CHARACTER 02</span>
+            <h3 class="char-name">엔더슨 <span>ANDERSON</span></h3>
+            <p>레마르크의 손자. 할아버지의 군대 이야기에 흥미를 가지고 귀 기울이는 청자. 회상의 문을 여는 사람.</p>
+          </article>
+          <article class="char">
+            <div class="char-portrait"><img src="assets/char-nick.png" alt="닉 캐러웨이 준위" loading="lazy" /></div>
+            <span class="char-no">CHARACTER 03</span>
+            <h3 class="char-name">닉 캐러웨이 <span>NICK CARRAWAY</span></h3>
+            <p>109 보병사단 준위. 실전이 처음인 레마르크 소령이 전장에 적응할 수 있도록 곁에서 도운 인물.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CORE LOOP / SYSTEM ============ -->
+    <section class="system" id="system">
+      <div class="system-inner">
+        <div class="section-head" data-reveal>
+          <span class="section-label">02 &mdash; CORE LOOP</span>
+          <span class="section-count">(04)</span>
+        </div>
+
+        <ol class="system-list">
+          <li class="sys" data-reveal>
+            <span class="sys-no">01</span>
+            <div class="sys-body">
+              <h3>도청 &amp; 정보 수집 <span>INTERCEPT</span></h3>
+              <p>도청이 시작되면 해독기가 적군의 모스 부호를 한 글자씩 문자로 변환한다. 플레이어는 <strong>Tap</strong>으로 변환된 내용을 직접 받아 적는다.</p>
+            </div>
+            <span class="sys-ico"><img src="assets/ico-intercept.png" alt="" aria-hidden="true" /></span>
+          </li>
+          <li class="sys" data-reveal>
+            <span class="sys-no">02</span>
+            <div class="sys-body">
+              <h3>정보 해석 <span>ANALYZE</span></h3>
+              <p>수집한 도청 내용을 해석한다. 이를 통해 적군의 다음 행동, 교신 시간, 그리고 주파수를 읽어낸다.</p>
+            </div>
+            <span class="sys-ico"><img src="assets/ico-analyze.png" alt="" aria-hidden="true" /></span>
+          </li>
+          <li class="sys" data-reveal>
+            <span class="sys-no">03</span>
+            <div class="sys-body">
+              <h3>명령 송신 <span>COMMAND</span></h3>
+              <p>해석한 정보를 바탕으로 모스 부호표를 보며 명령을 송신한다. 아군 유닛을 이동시키거나 공격 명령을 내린다.</p>
+            </div>
+            <span class="sys-ico"><img src="assets/ico-command.png" alt="" aria-hidden="true" /></span>
+          </li>
+          <li class="sys" data-reveal>
+            <span class="sys-no">04</span>
+            <div class="sys-body">
+              <h3>도청 준비 <span>TUNE</span></h3>
+              <p>다음 도청을 위해 주파수와 시간을 라디오와 시계에 입력한다. 잘못 맞추면 도청은 실패하고, 놓친 정보는 첩보란에서만 일부 확인할 수 있다.</p>
+            </div>
+            <span class="sys-ico"><img src="assets/ico-tune.png" alt="" aria-hidden="true" /></span>
+          </li>
+        </ol>
+
+        <div class="controls" data-reveal>
+          <span class="section-label">CONTROLS</span>
+          <ul class="control-grid">
+            <li><kbd>Space</kbd><span>0.05s</span><em>단점 · 생성</em></li>
+            <li><kbd>Space</kbd><span>0.15s</span><em>장점 &mdash; 생성</em></li>
+            <li><kbd>Enter</kbd><span>변환</span><em>문자 / 숫자</em></li>
+            <li><kbd>R</kbd><span>라디오</span><em>주파수</em></li>
+            <li><kbd>T</kbd><span>시계</span><em>교신 시간</em></li>
+            <li><kbd>Tap</kbd><span>메모장</span><em>받아쓰기</em></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IN-GAME SCREENS ============ -->
+    <section class="screens" id="screens">
+      <div class="screens-inner">
+        <div class="section-head" data-reveal>
+          <span class="section-label">INSIDE THE GAME &mdash; 트레일러 &amp; 인게임 화면</span>
+          <span class="section-count">(05)</span>
+        </div>
+
+        <figure class="trailer" data-reveal>
+          <div class="trailer-frame">
+            <iframe
+              src="https://www.youtube.com/embed/yqhgiFxgKK8?rel=0"
+              title="War In The Dark — 인디크래프트 출품 영상"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </div>
+          <figcaption>TRAILER &mdash; 인디크래프트 출품 영상</figcaption>
+        </figure>
+
+        <div class="screen-grid">
+          <figure class="screen screen--wide" data-reveal>
+            <img src="assets/screen-title.png" alt="War In The Dark 타이틀 화면" loading="lazy" />
+            <figcaption>TITLE &mdash; 메인 화면</figcaption>
+          </figure>
+          <figure class="screen screen--wide" data-reveal>
+            <img src="assets/screen-battle.png" alt="전장 전술 화면 — 모스 명령으로 유닛을 지휘한다" loading="lazy" />
+            <figcaption>BATTLEFIELD &mdash; 전장에서의 지휘</figcaption>
+          </figure>
+          <figure class="screen" data-reveal>
+            <img src="assets/screen-radio.png" alt="도청 주파수 설정 라디오 화면" loading="lazy" />
+            <figcaption>RADIO &mdash; 도청 주파수 설정</figcaption>
+          </figure>
+          <figure class="screen" data-reveal>
+            <img src="assets/screen-clock.png" alt="도청 시간 설정 화면" loading="lazy" />
+            <figcaption>CLOCK &mdash; 도청 시간 설정</figcaption>
+          </figure>
+          <figure class="screen screen--wide" data-reveal>
+            <img src="assets/screen-stage.png" alt="스테이지 선택 화면 — 잠긴 작전들" loading="lazy" />
+            <figcaption>OPERATIONS &mdash; 스테이지 선택</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KEY FEATURES ============ -->
+    <section class="features" id="features">
+      <div class="features-inner">
+        <p class="section-label centered" data-reveal>03 &mdash; KEY FEATURES</p>
+        <div class="feature-grid">
+          <article class="feature" data-reveal>
+            <span class="feature-no">01</span>
+            <h3>암호 해독 기반의 전투</h3>
+            <p>단순한 전투 중심의 플레이에서 벗어나 정보전의 중요성을 강조합니다. 신호를 빠르고 정확하게 해석해 적의 의도를 파악하고, 지상 부대를 효율적으로 통제해야 합니다.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="feature-no">02</span>
+            <h3>모스 부호 송수신</h3>
+            <p>아군 명령과 적군 감청이 단순 텍스트가 아닌 모스 부호라는 암호화된 형태로 진행됩니다. 낯선 정보 형식을 직접 해독해 내는 강렬한 쾌감을 제공합니다.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="feature-no">03</span>
+            <h3>1-Bit Pixel Art</h3>
+            <p>단 두 색(<code>#222323</code> · <code>#F0F6F0</code>)의 픽셀 아트로 단순하지만 강렬한 대비를 구현했습니다. 흑백의 전장이 전쟁 특유의 긴박함과 냉정함을 전달합니다.</p>
+            <div class="swatches" aria-hidden="true">
+              <span style="background:#222323"></span>
+              <span style="background:#F0F6F0"></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ UNITS ============ -->
+    <section class="units" id="units">
+      <div class="units-inner">
+        <div class="section-head" data-reveal>
+          <span class="section-label">FIELD UNITS</span>
+          <span class="section-count">추후 다양한 병과 확장 예정</span>
+        </div>
+
+
+        <div class="unit-grid">
+          <article class="unit" data-reveal>
+            <div class="unit-sprite"><img src="assets/spr-scout.png" alt="정찰병 스프라이트" loading="lazy" /></div>
+            <h3 class="unit-name">정찰병 <span>SCOUT</span></h3>
+            <p class="unit-trait">넓은 범위를 탐색하며 적의 위치를 파악하는 데 유리.</p>
+            <ul class="unit-stats">
+              <li><span>이동</span><b>3</b></li>
+              <li><span>공격력</span><b>7.5</b></li>
+              <li><span>공격 범위</span><b>1</b></li>
+              <li><span>체력</span><b>15</b></li>
+              <li><span>시야</span><b>2</b></li>
+            </ul>
+          </article>
+          <article class="unit" data-reveal>
+            <div class="unit-sprite"><img src="assets/spr-infantry.png" alt="보병 스프라이트" loading="lazy" /></div>
+            <h3 class="unit-name">보병 <span>INFANTRY</span></h3>
+            <p class="unit-trait">높은 체력으로 적과의 장기 전투에 유리.</p>
+            <ul class="unit-stats">
+              <li><span>이동</span><b>2</b></li>
+              <li><span>공격력</span><b>15</b></li>
+              <li><span>공격 범위</span><b>1</b></li>
+              <li><span>체력</span><b>30</b></li>
+              <li><span>시야</span><b>1</b></li>
+            </ul>
+          </article>
+          <article class="unit" data-reveal>
+            <div class="unit-sprite"><img src="assets/spr-sniper.png" alt="저격수 스프라이트" loading="lazy" /></div>
+            <h3 class="unit-name">저격수 <span>SNIPER</span></h3>
+            <p class="unit-trait">상하좌우 원거리 사격에 특화. 체력은 낮다.</p>
+            <ul class="unit-stats">
+              <li><span>이동</span><b>1</b></li>
+              <li><span>공격력</span><b>30</b></li>
+              <li><span>공격 범위</span><b>3</b></li>
+              <li><span>체력</span><b>5</b></li>
+              <li><span>시야</span><b>1</b></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ROADMAP ============ -->
+    <section class="roadmap" id="roadmap">
+      <div class="roadmap-inner">
+        <div class="section-head" data-reveal>
+          <span class="section-label">04 &mdash; PROJECT ROAD MAP</span>
+          <span class="section-count">TO STEAM LAUNCH</span>
+        </div>
+
+        <ol class="timeline">
+          <li class="tl" data-reveal>
+            <span class="tl-date">2026.07&ndash;08</span>
+            <div class="tl-body">
+              <h3>Stabilization</h3>
+              <p>안정화 및 피드백 수렴 &mdash; 패치를 통한 버그 수정과 밸런스 조절.</p>
+            </div>
+          </li>
+          <li class="tl" data-reveal>
+            <span class="tl-date">2026.09&ndash;10</span>
+            <div class="tl-body">
+              <h3>Content Expansion</h3>
+              <p>신규 스테이지 제작 &mdash; 스테이지 3·4·5의 스토리와 메커니즘 구현.</p>
+            </div>
+          </li>
+          <li class="tl" data-reveal>
+            <span class="tl-date">2026.11&ndash;12</span>
+            <div class="tl-body">
+              <h3>Unit Mastery</h3>
+              <p>병력 시스템 확장 &mdash; 특전·의무 등 특수 병과의 특성·스탯·외형 개발.</p>
+            </div>
+          </li>
+          <li class="tl" data-reveal>
+            <span class="tl-date">2027.01</span>
+            <div class="tl-body">
+              <h3>Game Modes</h3>
+              <p>추가 콘텐츠 개발 &mdash; 연습 모드, 무한 모드 등 다양한 모드와 난이도.</p>
+            </div>
+          </li>
+          <li class="tl tl--final" data-reveal>
+            <span class="tl-date">2027.02</span>
+            <div class="tl-body">
+              <h3>Launch on Steam</h3>
+              <p>The final mission begins. 완성본 스팀 출시와 글로벌 시장 진출.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ AWARDS ============ -->
+    <section class="awards" id="awards">
+      <div class="awards-inner">
+        <span class="section-label" data-reveal>AWARDS &amp; EXHIBITIONS</span>
+        <ul class="award-list">
+          <li class="award" data-reveal>
+            <span class="award-year">2024</span>
+            <span class="award-name">전북 인디게임 공모전 <strong>우수상</strong> — 한국모바일게임협회장상</span>
+            <span class="award-work">War In The Dark</span>
+          </li>
+          <li class="award" data-reveal>
+            <span class="award-year">2024</span>
+            <span class="award-name">서울 SBA × 슈퍼빌런랩스 게임 콘테스트 <strong>우수상</strong> — 서울경제진흥원장상</span>
+            <span class="award-work">War In The Dark</span>
+          </li>
+          <li class="award" data-reveal>
+            <span class="award-year">2026</span>
+            <span class="award-name">Play X4 IndieSeed Challenge IR Pitching <strong>2등</strong> — 독보적 존재감 상</span>
+            <span class="award-work">War In The Dark</span>
+          </li>
+          <li class="award" data-reveal>
+            <span class="award-year">2024</span>
+            <span class="award-name">Global Game Challenge <strong>인기상</strong></span>
+            <span class="award-work">fREeze! (개발 참여)</span>
+          </li>
+          <li class="award" data-reveal>
+            <span class="award-year">2026</span>
+            <span class="award-name">Play X4 IGIB Seed Base <strong>비주얼 마스터 상</strong></span>
+            <span class="award-work">fREeze! (개발 참여)</span>
+          </li>
+          <li class="award" data-reveal>
+            <span class="award-year">2025&ndash;26</span>
+            <span class="award-name">BIC · 코믹월드 · 스마일게이트 프로토타이핑 챌린지 · Play X4 인디 빌리지 등 전시</span>
+            <span class="award-work">War In The Dark / fREeze!</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ STUDIO / DEVELOPER ============ -->
+    <section class="philosophy" id="studio">
+      <div class="philosophy-inner">
+        <p class="section-label centered" data-reveal>THE STUDIO</p>
+        <p class="philosophy-statement" data-reveal>
+          새싹 스튜디오는 <em>식물과 게임을 사랑하는</em> 1인 개발자
+          <span>김시준</span>의 작업실입니다. 한 알의 씨앗이 어둠 속에서
+          싹을 틔우듯, 작은 아이디어를 깊은 세계로 길러내는 일에 몰두합니다.
+        </p>
+
+        <div class="dev" data-reveal>
+          <div class="dev-bio">
+            <p>
+              2002년생. 중앙대학교 식물생명공학과와 게임·인터랙티브 미디어학과를
+              복수전공하고 소프트웨어학을 부전공으로 이수 중입니다. 게임 클라이언트와
+              서버 개발 경험을 두루 갖추었으며, 새로운 플랫폼과 언어를 배우는 데
+              두려움이 없습니다.
+            </p>
+          </div>
+          <div class="dev-skills">
+            <span class="section-label">SKILLS</span>
+            <ul>
+              <li>Unity</li>
+              <li>C#</li>
+              <li>Python</li>
+              <li>Game Client</li>
+              <li>Backend &amp; Network</li>
+              <li>Pixel Art</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER / CONTACT ============ -->
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="contact-block" data-reveal>
+        <p class="newsletter-label">GET IN TOUCH</p>
+        <h2 class="newsletter-title">함께,<br />어둠 속에서.</h2>
+        <a href="mailto:siwancom22@cau.ac.kr" class="contact-mail">siwancom22@cau.ac.kr <span class="text-btn-arrow">&#8594;</span></a>
+        <p class="contact-tel">TEL. 010-4680-2059</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-socials">
+        <a href="https://github.com/Greenbraird" class="footer-social" target="_blank" rel="noopener">GITHUB</a>
+        <a href="#game" class="footer-social">STEAM (SOON)</a>
+        <a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&SITE_NO=5&BOARD_SEQ=1&BBS_SEQ=8458" class="footer-social" target="_blank" rel="noopener">PRESS</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 SPROUT STUDIO · 김시준. ALL RIGHTS RESERVED.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
