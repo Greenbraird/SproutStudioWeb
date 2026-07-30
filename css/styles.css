@@ -15,7 +15,7 @@
   --hairline:     rgba(255, 255, 255, 0.10);
   --hairline-soft:rgba(255, 255, 255, 0.06);
 
-  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: "Inter", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-serif: "Playfair Display", Georgia, serif;
 
   --pad-x: clamp(24px, 7vw, 100px);
@@ -102,6 +102,38 @@ img { display: block; max-width: 100%; }
 .logo { display: inline-flex; align-items: baseline; gap: 9px; }
 .logo-mark { font-weight: 700; font-size: 16px; letter-spacing: 0.18em; color: var(--white); }
 .logo-sub  { font-weight: 400; font-size: 16px; letter-spacing: 0.18em; color: var(--grey-dim); }
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-shrink: 0;
+}
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.lang-btn {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 6px 8px;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--grey-dim);
+  transition: color .35s var(--ease);
+}
+.lang-btn:hover { color: var(--white); }
+.lang-btn.is-active { color: var(--white); }
+.lang-btn + .lang-btn::before {
+  content: "·";
+  margin-right: 8px;
+  color: var(--grey-dim);
+  pointer-events: none;
+}
 
 .nav { display: flex; gap: 52px; }
 .nav-link {
@@ -421,6 +453,8 @@ img { display: block; max-width: 100%; }
   .nav { display: none; }
   .menu-toggle { display: flex; }
   .mobile-nav { display: flex; }
+  .header-tools { gap: 12px; }
+  .lang-btn { padding: 6px 6px; }
   .project-meta { flex-direction: column; align-items: flex-start; gap: 28px; }
   .project-art { aspect-ratio: 16 / 10; }
   .philosophy-pillars { grid-template-columns: 1fr; gap: 0; }
