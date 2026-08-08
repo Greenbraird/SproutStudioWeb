@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+  <path
+    d="M80 128c0-18 4-34 14-48 8-11 18-20 30-28-14 4-26 12-35 24-6 8-10 18-12 28-2-10-6-20-12-28-9-12-21-20-35-24 12 8 22 17 30 28 10 14 14 30 14 48z"
+    fill="#9aaf96"
+  />
+  <path
+    d="M80 78v50"
+    stroke="#7f967b"
+    stroke-width="5"
+    stroke-linecap="round"
+  />
+  <ellipse cx="80" cy="132" rx="22" ry="7" fill="#b7c6b0" />
+</svg>
