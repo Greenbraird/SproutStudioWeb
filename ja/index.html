@@ -106,7 +106,7 @@
   <header class="site-header" id="header">
     <div class="header-inner">
       <a href="#top" class="logo">
-        <img class="logo-img" src="../assets/sprout-mark-1bit.png" width="78" height="66" alt="" />
+        <img class="logo-img" src="../assets/sprout-mark-39.png" width="39" height="33" alt="" />
         <span class="logo-text"><span class="logo-mark">SPROUT</span> <span class="logo-sub">STUDIO</span></span><span class="sr-only" data-i18n="aria.homeSuffix"> — スプラウトスタジオ、トップへ</span>
       </a>
 
@@ -144,7 +144,7 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero-field" aria-hidden="true">
-        <img src="../assets/hero-1bit.webp" width="728" height="408" alt="" fetchpriority="high" decoding="async" />
+        <img src="../assets/hero-soft.webp" width="1456" height="816" alt="" fetchpriority="high" decoding="async" />
       </div>
       <div class="hero-grid">
         <div class="hero-id">
@@ -197,7 +197,7 @@
 
         <div class="dossier">
           <figure class="dossier-photo" data-anim="rise">
-            <img src="../assets/sprout-logo-1bit.png" width="78" height="108" alt="" />
+            <img src="../assets/sprout-logo-78.png" width="78" height="108" alt="" />
             <figcaption>FILE SPR-001</figcaption>
           </figure>
           <div class="dossier-body" data-anim="rise">
@@ -264,7 +264,10 @@
 
         <div class="game-grid">
           <figure class="game-logo" data-anim="rise">
-            <img src="../assets/wid-logo.webp" width="270" height="270" alt="War In The Dark ロゴ" data-i18n-attr="alt:game.logoAlt" />
+            <picture>
+              <source media="(max-width: 639px)" srcset="../assets/wid-logo-clean-278.webp" width="278" height="144" />
+              <img src="../assets/wid-logo-clean.webp" width="556" height="287" alt="War In The Dark ロゴ" data-i18n-attr="alt:game.logoAlt" />
+            </picture>
           </figure>
           <div class="game-intro" data-anim="rise">
             <p class="logline" data-i18n="game.logline">1950年代の架空の戦争を舞台に、敵のモールス信号を傍受して友軍を指揮する<strong>1-bitターン制傍受シミュレーション</strong>。単なる戦闘ではなく、闇の中の情報戦の緊張を自ら解読する体験です。</p>
@@ -276,7 +279,12 @@
               <div><dt>PRICE</dt><dd data-i18n="game.priceVal">6,900ウォン / 5.90ドル</dd></div>
             </dl>
             <p class="game-cta">
-              <a class="btn btn--primary btn--lg" href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener noreferrer" data-i18n="cta.wishlist">Steamでウィッシュリストに追加 <span aria-hidden="true">→</span></a>
+              <a class="btn btn--steam" href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener noreferrer">
+                <picture>
+                  <source media="(min-width: 770px) and (max-width: 1100px)" srcset="../assets/wishlist-steam.webp" width="688" height="48" />
+                  <img src="../assets/wishlist-steam-2line.webp" width="328" height="104" alt="Steamでウィッシュリストに追加" data-i18n-attr="alt:cta.wishlistImgAlt" />
+                </picture>
+              </a>
             </p>
           </div>
         </div>
@@ -622,8 +630,8 @@
         <div class="press-assets" data-anim="rise">
           <h3 class="sub-title"><span>DOWNLOADS</span> <span class="sub-local" data-i18n="press.dlNote">オリジナルPNG · 記事で自由にお使いください</span></h3>
           <ul class="dl-grid">
-            <li><a href="../assets/wid-logo.png" download><img src="../assets/wid-logo.webp" width="270" height="270" alt="" loading="lazy" /><span data-i18n="press.dlGameLogo">ゲームロゴ</span> <small>PNG · 270×270</small></a></li>
-            <li><a href="../assets/sprout-logo.png" download><img src="../assets/sprout-logo-1bit.png" width="78" height="108" alt="" loading="lazy" class="pixel" /><span data-i18n="press.dlStudioLogo">スタジオロゴ</span> <small>PNG · 1280×1280</small></a></li>
+            <li><a href="../assets/wid-logo-clean.png" download><img src="../assets/wid-logo-clean-278.webp" width="278" height="144" alt="" loading="lazy" class="pixel dl-plate" /><span data-i18n="press.dlGameLogo">ゲームロゴ</span> <small>PNG · 556×287</small></a></li>
+            <li><a href="../assets/sprout-logo.png" download><img src="../assets/sprout-logo-78.png" width="78" height="108" alt="" loading="lazy" class="pixel dl-plate" /><span data-i18n="press.dlStudioLogo">スタジオロゴ</span> <small>PNG · 1280×1280</small></a></li>
             <li><a href="../assets/screen-battle.png" download><img src="../assets/screen-battle.webp" width="1006" height="569" alt="" loading="lazy" /><span>Screenshot — Battlefield</span> <small>PNG · 1006×569</small></a></li>
             <li><a href="../assets/screen-radio.png" download><img src="../assets/screen-radio.webp" width="1005" height="566" alt="" loading="lazy" /><span>Screenshot — Radio</span> <small>PNG · 1005×566</small></a></li>
             <li><a href="../assets/screen-clock.png" download><img src="../assets/screen-clock.webp" width="1006" height="566" alt="" loading="lazy" /><span>Screenshot — Clock</span> <small>PNG · 1006×566</small></a></li>

@@ -80,7 +80,7 @@ body {
   overflow-x: hidden;
 }
 img { max-width: 100%; height: auto; display: block; }
-.pixel, .logo-img, .hero-field img, .dossier-photo img, .game-logo img, .char-portrait img,
+.pixel, .logo-img, .dossier-photo img, .game-logo img, .btn--steam img, .char-portrait img,
 .unit-sprite img, .loop-ico, .story-scene img { image-rendering: pixelated; }
 a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 a:hover { text-decoration-style: dashed; }
@@ -159,7 +159,7 @@ main:focus-visible { outline: none; }
   display: flex; align-items: center; gap: 16px; padding: 0 var(--gut);
 }
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; flex: 0 0 auto; min-height: 44px; }
-.logo-img { width: 39px; height: 33px; }
+.logo-img { width: 39px; height: 33px; } /* colour mark at 1x */
 .logo-text { font-family: var(--f-pixel); font-weight: 700; font-size: 16px; letter-spacing: 0.06em; white-space: nowrap; }
 .logo-sub { font-weight: 400; }
 
@@ -231,7 +231,6 @@ main:focus-visible { outline: none; }
   .dial { display: none; }
   .header-cta { display: none; }
   .header-inner { gap: 8px; }
-  .logo-img { width: 26px; height: 22px; }
   .lang-link { min-width: 34px; min-height: 40px; padding: 0 4px; }
 }
 @media (max-width: 360px) {
@@ -295,7 +294,7 @@ main:focus-visible { outline: none; }
 .js .stamp--decoded.is-hidden { visibility: hidden; }
 
 .hero-field { order: 2; position: relative; margin-top: 64px; height: clamp(180px, 34vh, 360px); overflow: hidden; border-top: var(--rule) solid var(--paper); }
-.hero-field img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
+.hero-field img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; image-rendering: auto; } /* soft tone photo, not dithered */
 
 /* ---------- Sections ---------- */
 .section { position: relative; padding: 112px 0 96px; scroll-margin-top: calc(var(--header-h) + var(--dial-h)); }
@@ -324,7 +323,7 @@ main:focus-visible { outline: none; }
 
 /* ---------- 01 Studio ---------- */
 .dossier { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; align-items: start; }
-.dossier-photo { margin: 0; border: var(--rule) solid var(--ink); padding: 16px; background: var(--ink); color: var(--paper); }
+.dossier-photo { margin: 0; border: var(--rule) solid var(--ink); padding: 16px; background: var(--paper); color: var(--ink); } /* PAPER plate: colour logo outline #493735 vanishes on INK */
 .dossier-photo img { width: 156px; height: 216px; margin: 0 auto; }
 .dossier-photo figcaption { font-family: var(--f-pixel); font-size: 16px; text-align: center; margin-top: 12px; }
 .statement { font-family: "Galmuri11", var(--f-head); font-size: 24px; line-height: 1.6; margin-bottom: 32px; }
@@ -335,9 +334,13 @@ main:focus-visible { outline: none; }
 .award-work { font-family: var(--f-pixel); font-size: 16px; white-space: nowrap; }
 
 /* ---------- 02 Game ---------- */
-.game-grid { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 48px; align-items: start; }
-.game-logo { margin: 0; border: var(--rule) solid var(--paper); padding: 12px; }
-.game-logo img { width: 270px; height: 270px; }
+.game-grid { display: grid; grid-template-columns: calc(556px + 32px + 2 * var(--rule)) minmax(0, 1fr); gap: 48px; align-items: start; }
+.game-logo { margin: 0; border: var(--rule) solid var(--paper); padding: 16px; background: var(--paper); justify-self: start; } /* INK letters need a PAPER plate */
+.game-logo img { width: 556px; height: 287px; }
+.btn--steam { padding: 12px; background: var(--paper); border-color: var(--paper); }
+.btn--steam:hover { background: var(--paper); outline: 2px dashed var(--paper); outline-offset: 4px; }
+.btn--steam:active { transform: translateY(2px); }
+.btn--steam img { width: auto; height: auto; }
 .logline { font-family: "Galmuri11", var(--f-head); font-size: 24px; line-height: 1.6; margin-bottom: 28px; }
 .game-cta { margin-top: 28px; }
 .steam-widget { margin: 56px 0 0; max-width: 680px; }
@@ -467,6 +470,7 @@ main:focus-visible { outline: none; }
 .dl-grid a { display: flex; flex-direction: column; gap: 6px; height: 100%; border: var(--rule) solid var(--ink); padding: 10px; text-decoration: none; }
 .dl-grid a:hover { background: var(--ink); color: var(--paper); }
 .dl-grid img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; background: var(--ink); border: 2px solid var(--ink); }
+.dl-grid img.dl-plate { object-fit: scale-down; background: var(--paper); }
 .dl-grid span { font-family: var(--f-head); font-weight: 700; }
 .dl-grid small { font-family: var(--f-pixel); font-size: 16px; }
 
@@ -536,8 +540,6 @@ main:focus-visible { outline: none; }
   .award { grid-template-columns: 64px minmax(0, 1fr); }
   .award-year { font-size: 16px; }
   .award-work { grid-column: 2; }
-  .game-logo { justify-self: start; }
-  .game-logo img { width: 200px; height: 200px; }
   .steam-widget iframe { height: 200px; }
   .steam-slot { min-height: 200px; }
   .trailer-play { font-size: 15px; padding: 10px 14px; }
@@ -590,3 +592,14 @@ main:focus-visible { outline: none; }
 .press-links a:hover, .press-links a:focus-visible { background: var(--ink); color: var(--paper); }
 .cov-meta { display: block; font-family: var(--f-head); font-weight: 700; font-size: 14px; margin-bottom: 2px; }
 .cov-title { font-weight: 700; }
+
+/* ---------- Clean game logo / wishlist pixel text (kept last so they win over the earlier breakpoints) ---------- */
+@media (max-width: 1100px) {
+  .game-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+}
+@media (max-width: 639px) {
+  .game-logo img { width: 278px; height: 144px; } /* 278px reduced asset at 1x */
+}
+@media (max-width: 379px) {
+  .btn--steam { padding: 0; border-width: 0; } /* keep the 328px pixel text at exactly 1x on 360px phones */
+}

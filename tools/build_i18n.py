@@ -11,7 +11,7 @@ Usage (from the repo root, Python 3.8+, no extra packages):
 Rules
 - Elements with data-i18n="key"       : inner HTML is replaced with strings[lang][key]
 - Elements with data-i18n-attr="a:k;b:k2" : attribute a gets strings[lang][k], ...
-- Relative URLs (assets/, css/, js/, favicon) are prefixed with "../"
+- Relative URLs (assets/, css/, js/, favicon) in src/srcset/href/content are prefixed with "../"
 - <html lang>, canonical, og:url and the KO/EN/JA switcher are rewritten per language
 Missing keys are reported and fall back to the Korean text.
 """
@@ -100,7 +100,7 @@ def relocate(page, lang):
     # html lang
     page = re.sub(r'<html lang="ko" data-lang="ko">', '<html lang="%s" data-lang="%s">' % (lang, lang), page, count=1)
     # relative asset URLs -> ../
-    page = re.sub(r'((?:src|href|content)=")(?=(?:assets/|css/|js/|favicon))', r"\1../", page)
+    page = re.sub(r'((?:src|srcset|href|content)=")(?=(?:assets/|css/|js/|favicon))', r"\1../", page)
     # self URLs (canonical, og:url)
     self_url = BASE_URL + LANGS[lang]
     page = re.sub(r'(<link rel="canonical" data-self-url href=")[^"]*(")', r"\g<1>%s\2" % self_url, page)
