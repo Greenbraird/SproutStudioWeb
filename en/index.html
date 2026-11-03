@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="meta.title">Sprout Studio — Solo indie game studio · War In The Dark</title>
-  <meta name="description" data-i18n-attr="content:meta.description" content="Sprout Studio is the indie game studio of solo developer Sijun Kim. Our flagship title War In The Dark is a 1-bit turn-based interception simulation set in a fictional 1950s war." />
+  <meta name="description" data-i18n-attr="content:meta.description" content="Sprout Studio is the indie game studio of solo developer Sijun Kim. Our flagship title War In The Dark is a 1-bit turn-based interception simulation set in a fictional 1950s war, coming to Steam in September 2027." />
   <meta name="theme-color" content="#222323" />
   <meta name="color-scheme" content="dark light" />
   <link rel="canonical" data-self-url href="https://greenbraird.github.io/SproutStudioWeb/en/" />
@@ -49,8 +49,16 @@
         "alternateName": "새싹 스튜디오",
         "url": "https://greenbraird.github.io/SproutStudioWeb/",
         "logo": "https://greenbraird.github.io/SproutStudioWeb/assets/sprout-logo.png",
-        "email": "siwancom22@cau.ac.kr",
+        "email": "madeby.sproutstudio@gmail.com",
         "founder": { "@type": "Person", "name": "Sijun Kim", "alternateName": "김시준" },
+        "award": [
+          "2024 Jeonbuk Indie Game Contest — Excellence Award (Korea Mobile Game Association Chairman's Award)",
+          "2024 Seoul SBA × Supervillain Labs Game Contest — Excellence Award (Seoul Business Agency CEO's Award)",
+          "2026 PlayX4 IndieSeed Challenge IR Pitching — 2nd Place (Distinct Presence Award)",
+          "2026 Indiecraft Challenger Division — Top 20, then Excellence Award (Seongnam Industry Promotion Agency CEO's Award)",
+          "2026 GIGDC University Development Division — Silver Prize (Korea Game Developers Association Chairman's Award)",
+          "2026 21st Gyeonggi Game Audition Student Division — 2nd Place"
+        ],
         "sameAs": [
           "https://github.com/Greenbraird",
           "https://www.instagram.com/madeby.sprout/",
@@ -62,11 +70,30 @@
         "name": "War In The Dark",
         "url": "https://store.steampowered.com/app/4949240/War_In_The_Dark/",
         "image": "https://greenbraird.github.io/SproutStudioWeb/assets/og-image.png",
-        "description": "A 1-bit turn-based interception simulation set in a fictional 1950s war. Intercept enemy Morse signals and command your forces.",
+        "description": "A 1-bit turn-based interception simulation set in a fictional 1950s war. Intercept enemy Morse signals and command your forces. Planned Steam release: September 2027.",
         "genre": ["Turn-Based Strategy", "Military Strategy", "Simulation"],
         "gamePlatform": "PC",
         "author": { "@id": "https://greenbraird.github.io/SproutStudioWeb/#studio" },
-        "publisher": { "@id": "https://greenbraird.github.io/SproutStudioWeb/#studio" }
+        "publisher": { "@id": "https://greenbraird.github.io/SproutStudioWeb/#studio" },
+        "trailer": {
+          "@type": "VideoObject",
+          "name": "War In The Dark Trailer - 1",
+          "embedUrl": "https://www.youtube.com/embed/KcvhLI1SKCk",
+          "contentUrl": "https://www.youtube.com/watch?v=KcvhLI1SKCk",
+          "thumbnailUrl": "https://i.ytimg.com/vi/KcvhLI1SKCk/hqdefault.jpg"
+        },
+        "award": [
+          "2024 Jeonbuk Indie Game Contest — Excellence Award (Korea Mobile Game Association Chairman's Award)",
+          "2024 Seoul SBA × Supervillain Labs Game Contest — Excellence Award (Seoul Business Agency CEO's Award)",
+          "2026 PlayX4 IndieSeed Challenge IR Pitching — 2nd Place (Distinct Presence Award)",
+          "2026 Indiecraft Challenger Division — Top 20, then Excellence Award (Seongnam Industry Promotion Agency CEO's Award)",
+          "2026 GIGDC University Development Division — Silver Prize (Korea Game Developers Association Chairman's Award)",
+          "2026 21st Gyeonggi Game Audition Student Division — 2nd Place"
+        ],
+        "offers": [
+          { "@type": "Offer", "price": "6900", "priceCurrency": "KRW", "availabilityStarts": "2027-09", "url": "https://store.steampowered.com/app/4949240/War_In_The_Dark/" },
+          { "@type": "Offer", "price": "5.90", "priceCurrency": "USD", "availabilityStarts": "2027-09", "url": "https://store.steampowered.com/app/4949240/War_In_The_Dark/" }
+        ]
       }
     ]
   }
@@ -100,13 +127,14 @@
           <a class="lang-link" data-lang-link="en" href="./" hreflang="en" lang="en" aria-current="page">EN</a>
           <a class="lang-link" data-lang-link="ja" href="../ja/" hreflang="ja" lang="ja">JA</a>
         </nav>
-        <a class="btn btn--sm btn--invert header-cta" href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener" data-i18n="cta.wishlistShort">Wishlist</a>
+        <a class="btn btn--sm btn--invert header-cta" href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener noreferrer" data-i18n="cta.wishlistShort">Wishlist</a>
         <button type="button" class="menu-toggle" id="menuToggle" aria-controls="primaryNav" aria-expanded="false" data-i18n-attr="aria-label:aria.menu" aria-label="Open menu">
           <span class="menu-bars" aria-hidden="true"></span>
         </button>
       </div>
     </div>
     <div class="dial" aria-hidden="true">
+      <span class="dial-led"></span>
       <span class="dial-readout"><span class="dial-band">BAND</span> <span id="dialFreq">03.50</span> MHz</span>
       <span class="dial-scale"><span class="dial-needle" id="dialNeedle"></span></span>
     </div>
@@ -147,8 +175,9 @@
             <span class="decoded-text" id="heroDecoded" aria-hidden="true">WAR IN THE DARK</span>
           </p>
           <p class="telegram-sub" data-i18n="hero.tgSub">A fictional 1950s war · 1-bit turn-based interception simulation · PC (Steam)</p>
+          <p class="telegram-eta"><span class="eta-k">ETA</span> <span data-i18n="hero.eta">Coming to Steam in September 2027 · ₩6,900 / $5.90</span></p>
           <div class="telegram-actions">
-            <a class="btn btn--primary btn--lg" href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener" data-i18n="cta.wishlist">Wishlist on Steam <span aria-hidden="true">→</span></a>
+            <a class="btn btn--primary btn--lg" href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener noreferrer" data-i18n="cta.wishlist">Wishlist on Steam <span aria-hidden="true">→</span></a>
             <a class="btn btn--ghost" href="#game" data-i18n="hero.ctaGame">More about the game</a>
           </div>
           <button type="button" class="replay" id="heroReplay" hidden data-i18n="hero.replay">Receive the signal again</button>
@@ -206,7 +235,17 @@
             </li>
             <li class="award">
               <span class="award-year">2026</span>
-              <span class="award-name" data-i18n="award.04">Indiecraft Challenger Division — selected for the <strong>Top 20</strong></span>
+              <span class="award-name" data-i18n="award.04">Indiecraft Challenger Division — Top 20 → <strong>Excellence Award</strong> — Seongnam Industry Promotion Agency CEO's Award</span>
+              <span class="award-work">War In The Dark</span>
+            </li>
+            <li class="award">
+              <span class="award-year">2026</span>
+              <span class="award-name" data-i18n="award.05">GIGDC 2026 University Development Division <strong>Silver Prize</strong> — Korea Game Developers Association Chairman's Award</span>
+              <span class="award-work">War In The Dark</span>
+            </li>
+            <li class="award">
+              <span class="award-year">2026</span>
+              <span class="award-name" data-i18n="award.06">21st Gyeonggi Game Audition, Student Division — <strong>2nd place</strong></span>
               <span class="award-work">War In The Dark</span>
             </li>
           </ul>
@@ -232,10 +271,12 @@
             <dl class="fields fields--grid">
               <div><dt>PLATFORM</dt><dd>PC · Steam</dd></div>
               <div><dt>GENRE</dt><dd>Turn-Based War · Military Strategy</dd></div>
-              <div><dt>STATUS</dt><dd data-i18n="game.statusVal">In development · Steam release targeted for 2027 (exact date TBD)</dd></div>
+              <div><dt>STATUS</dt><dd data-i18n="game.statusVal">In development · Coming to Steam in September 2027</dd></div>
+              <div><dt>RELEASE</dt><dd data-i18n="game.releaseVal">September 2027</dd></div>
+              <div><dt>PRICE</dt><dd data-i18n="game.priceVal">₩6,900 / $5.90</dd></div>
             </dl>
             <p class="game-cta">
-              <a class="btn btn--primary btn--lg" href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener" data-i18n="cta.wishlist">Wishlist on Steam <span aria-hidden="true">→</span></a>
+              <a class="btn btn--primary btn--lg" href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener noreferrer" data-i18n="cta.wishlist">Wishlist on Steam <span aria-hidden="true">→</span></a>
             </p>
           </div>
         </div>
@@ -249,11 +290,11 @@
 
         <h3 class="sub-title"><span>INSIDE THE GAME</span> <span class="sub-local" data-i18n="screens.title">Trailer &amp; screenshots</span></h3>
         <figure class="trailer" data-anim="rise">
-          <a class="trailer-facade" id="trailer" href="https://www.youtube.com/watch?v=yqhgiFxgKK8" target="_blank" rel="noopener" data-yt="yqhgiFxgKK8" data-i18n-attr="data-title:trailer.title" data-title="War In The Dark — Indiecraft submission trailer">
-            <img src="../assets/screen-title.webp" width="885" height="500" alt="" loading="lazy" decoding="async" />
+          <a class="trailer-facade" id="trailer" href="https://www.youtube.com/watch?v=KcvhLI1SKCk" target="_blank" rel="noopener noreferrer" data-yt="KcvhLI1SKCk" data-i18n-attr="data-title:trailer.title" data-title="War In The Dark — Official Trailer 1">
+            <img src="../assets/trailer-thumb.webp" width="480" height="270" alt="" loading="lazy" decoding="async" />
             <span class="trailer-play"><span aria-hidden="true">▶</span> <span data-i18n="trailer.play">Play trailer (YouTube)</span></span>
           </a>
-          <figcaption data-i18n="trailer.caption">TRAILER — Indiecraft submission</figcaption>
+          <figcaption data-i18n="trailer.caption">TRAILER 1 — Official trailer (YouTube · Sprout Studio)</figcaption>
         </figure>
 
         <div class="screen-grid">
@@ -460,7 +501,7 @@
             </dl>
           </article>
           <article class="unit" data-anim="rise">
-            <div class="unit-sprite unit-sprite--hi"><img src="../assets/spr-sniper.webp" width="367" height="367" data-i18n-attr="alt:unit.sniperAlt" alt="Sniper sprite" loading="lazy" /></div>
+            <div class="unit-sprite unit-sprite--hi"><img src="../assets/spr-sniper-cut.webp" width="367" height="367" data-i18n-attr="alt:unit.sniperAlt" alt="Sniper sprite" loading="lazy" /></div>
             <h4 class="unit-name" data-i18n="unit.sniper">Sniper <span>SNIPER</span></h4>
             <p class="unit-trait" data-i18n="unit.sniperTrait">Specialized in long-range fire up, down, left and right. Low HP.</p>
             <dl class="unit-stats">
@@ -527,12 +568,12 @@
             <span class="tl-status" data-i18n="tl.statusNext">Planned</span>
           </li>
           <li class="tl tl--final" data-anim="rise">
-            <span class="tl-date">2027 · TBD</span>
+            <span class="tl-date">2027.09</span>
             <div class="tl-body">
               <h3>Launch on Steam</h3>
-              <p data-i18n="tl.05.body">The final mission begins. Full Steam launch and global release. The exact date will be announced once confirmed.</p>
+              <p data-i18n="tl.05.body">The final mission begins. Full Steam launch and global release, targeted for September 2027.</p>
             </div>
-            <span class="tl-status" data-i18n="tl.statusTbd">Release date TBD</span>
+            <span class="tl-status" data-i18n="tl.statusLaunch">Planned release · September 2027</span>
           </li>
         </ol>
       </div>
@@ -555,21 +596,25 @@
               <div><dt>TITLE</dt><dd>War In The Dark</dd></div>
               <div><dt>PLATFORM</dt><dd>PC (Steam)</dd></div>
               <div><dt>GENRE</dt><dd>Turn-Based War · Military Strategy</dd></div>
-              <div><dt data-i18n="press.fRelease">RELEASE</dt><dd data-i18n="press.fReleaseVal">Targeted for 2027 · date TBD</dd></div>
-              <div><dt data-i18n="press.fPrice">PRICE</dt><dd>TBD</dd></div>
-              <div><dt>STEAM</dt><dd><a href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener">store.steampowered.com/app/4949240</a></dd></div>
-              <div><dt>TRAILER</dt><dd><a href="https://www.youtube.com/watch?v=yqhgiFxgKK8" target="_blank" rel="noopener">youtube.com/watch?v=yqhgiFxgKK8</a></dd></div>
-              <div><dt data-i18n="press.fContact">PRESS CONTACT</dt><dd><a href="mailto:siwancom22@cau.ac.kr">siwancom22@cau.ac.kr</a></dd></div>
+              <div><dt data-i18n="press.fRelease">RELEASE</dt><dd data-i18n="press.fReleaseVal">September 2027 (planned Steam release)</dd></div>
+              <div><dt data-i18n="press.fPrice">PRICE</dt><dd data-i18n="press.fPriceVal">₩6,900 (KRW) / $5.90 (USD)</dd></div>
+              <div><dt>STEAM</dt><dd><a href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener noreferrer">store.steampowered.com/app/4949240</a></dd></div>
+              <div><dt>TRAILER</dt><dd><a href="https://www.youtube.com/watch?v=KcvhLI1SKCk" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=KcvhLI1SKCk</a></dd></div>
+              <div><dt data-i18n="press.fContact">PRESS CONTACT</dt><dd><a href="mailto:madeby.sproutstudio@gmail.com">madeby.sproutstudio@gmail.com</a></dd></div>
             </dl>
           </div>
           <div class="press-copy" data-anim="rise">
             <h3 class="sub-title"><span>DESCRIPTION</span></h3>
             <p data-i18n="press.desc">War In The Dark is a 1-bit turn-based interception simulation set in a fictional 1950s war. Players intercept and interpret enemy Morse signals, then command their allies by sending orders in Morse code. Pixel art in just two colors (#222323 · #F0F6F0) conveys the tension of information warfare.</p>
             <h3 class="sub-title"><span>ABOUT THE STUDIO</span></h3>
-            <p data-i18n="press.about">Sprout Studio is the indie game studio of solo developer Sijun Kim, who loves plants and games. War In The Dark won the Excellence Award at the Jeonbuk Indie Game Contest and at the Seoul SBA × Supervillain Labs Game Contest, took 2nd place at Play X4 IndieSeed Challenge IR Pitching, and was selected for the Top 20 of the Indiecraft Challenger Division.</p>
+            <p data-i18n="press.about">Sprout Studio is the indie game studio of solo developer Sijun Kim, who loves plants and games. War In The Dark won the Excellence Award at the Jeonbuk Indie Game Contest and at the Seoul SBA × Supervillain Labs Game Contest, took 2nd place at Play X4 IndieSeed Challenge IR Pitching, and won the Excellence Award (Seongnam Industry Promotion Agency CEO's Award) in the Indiecraft Challenger Division, the Silver Prize (Korea Game Developers Association Chairman's Award) in the GIGDC 2026 University Development Division, and 2nd place in the Student Division of the 21st Gyeonggi Game Audition.</p>
             <h3 class="sub-title"><span>COVERAGE</span></h3>
             <ul class="press-links">
-              <li><a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&amp;SITE_NO=5&amp;BOARD_SEQ=1&amp;BBS_SEQ=8458" target="_blank" rel="noopener" data-i18n="press.coverage1">Chung-Ang University news article (Korean) →</a></li>
+              <li><a href="https://news.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=10&amp;SITE_NO=5&amp;BOARD_SEQ=1&amp;BBS_SEQ=8458" target="_blank" rel="noopener noreferrer"><span class="cov-meta"><span data-i18n="press.cov1">Chung-Ang University CAU News (Korean)</span> · 2024.12.12</span> <span class="cov-title" lang="ko">가상융합대학 게임·인터랙티브 미디어 융합전공 김시준 학생, '2024 SBA X 슈퍼빌런랩스 게임 콘테스트' 우수상 수상</span> <span aria-hidden="true">→</span></a></li>
+              <li><a href="https://www.gameinsight.co.kr/news/articleView.html?idxno=36711" target="_blank" rel="noopener noreferrer"><span class="cov-meta"><span data-i18n="press.cov2">Game Insight (Korean)</span> · 2026.08.15</span> <span class="cov-title" lang="ko">워 인 더 다크, 모스 부호로 통제하는 '전쟁의 모든 것'</span> <span aria-hidden="true">→</span></a></li>
+              <li><a href="https://www.tleaves.co.kr/news/articleView.html?idxno=9712" target="_blank" rel="noopener noreferrer"><span class="cov-meta"><span data-i18n="press.cov3">The Leaves (Korean)</span> · 2026.08.15</span> <span class="cov-title" lang="ko">[현장 Q&amp;A] &quot;불편함, 몰입감이 되다&quot; 모스 부호로 차별화 '워 인 더 다크'</span> <span aria-hidden="true">→</span></a></li>
+              <li><a href="https://www.inven.co.kr/webzine/news/?news=319591" target="_blank" rel="noopener noreferrer"><span class="cov-meta"><span data-i18n="press.cov4">Inven (Korean)</span> · 2026.08.16</span> <span class="cov-title" lang="ko">[BIC2026] '워 인더 다크', 어둠 속 모스 부호로 전투를 지휘하다</span> <span aria-hidden="true">→</span></a></li>
+              <li><a href="https://www.4gamer.net/games/033/G103377/20260817029/" target="_blank" rel="noopener noreferrer"><span class="cov-meta"><span data-i18n="press.cov5">4Gamer.net (Japanese)</span> · 2026.08.17</span> <span class="cov-title" lang="ja">部隊への命令は，スペースキーの長短で打つ。敵の通信を傍受して次の一手を読むモノクロ戦略シミュレーション「War In The Dark」［BIC2026］</span> <span aria-hidden="true">→</span></a></li>
             </ul>
           </div>
         </div>
@@ -598,11 +643,11 @@
         <p class="sec-meta"><span>TRANSMISSION 08</span><span aria-hidden="true">FREQ 17.20 MHz</span></p>
         <h2 class="sec-title" id="contact-title"><span class="sec-en">CONTACT</span> <span class="sec-local" data-i18n="contact.title">Together, in the dark.</span></h2>
       </div>
-      <p class="contact-mail"><a href="mailto:siwancom22@cau.ac.kr">siwancom22@cau.ac.kr <span aria-hidden="true">→</span></a></p>
+      <p class="contact-mail"><a href="mailto:madeby.sproutstudio@gmail.com">madeby.sproutstudio@gmail.com <span aria-hidden="true">→</span></a></p>
       <ul class="socials">
-        <li><a href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener">STEAM</a></li>
-        <li><a href="https://www.instagram.com/madeby.sprout/" target="_blank" rel="noopener">INSTAGRAM</a></li>
-        <li><a href="https://github.com/Greenbraird" target="_blank" rel="noopener">GITHUB</a></li>
+        <li><a href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener noreferrer">STEAM</a></li>
+        <li><a href="https://www.instagram.com/madeby.sprout/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></li>
+        <li><a href="https://github.com/Greenbraird" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
         <li><a href="#press">PRESS KIT</a></li>
       </ul>
       <p class="end-tx" aria-hidden="true">·−·−· END OF TRANSMISSION ·−·−·</p>

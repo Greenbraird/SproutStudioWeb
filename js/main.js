@@ -133,7 +133,7 @@
       if (lamp) lamp.classList.remove("on");
       if (stamp) {
         stamp.classList.remove("is-hidden");
-        if (window.gsap && !reduced()) window.gsap.from(stamp, { scale: 1.8, rotation: -12, autoAlpha: 0, duration: 0.35, ease: "steps(5)" });
+        if (window.gsap && !reduced()) window.gsap.from(stamp, { scale: 1.8, autoAlpha: 0, duration: 0.35, ease: "steps(5)" });
       }
       if (replay && !reduced()) replay.hidden = false;
     }
@@ -272,7 +272,7 @@
         status.textContent = root.getAttribute("data-msg-ok") || "OK";
         if (stamp) {
           stamp.hidden = false;
-          if (window.gsap && !reduced()) window.gsap.from(stamp, { scale: 1.8, rotation: 12, autoAlpha: 0, duration: 0.3, ease: "steps(5)" });
+          if (window.gsap && !reduced()) window.gsap.from(stamp, { scale: 1.8, autoAlpha: 0, duration: 0.3, ease: "steps(5)" });
         }
       }
     }
@@ -340,7 +340,7 @@
       if (el.getAttribute("data-anim") === "head") {
         gsap.set(el, { opacity: 0 });
         var st = el.querySelector(".stamp");
-        if (st) gsap.set(st, { opacity: 0, scale: 1.8, rotation: -16 });
+        if (st) gsap.set(st, { opacity: 0, scale: 1.8 });
       } else {
         gsap.set(el, { opacity: 0, y: 32 });
       }
@@ -355,7 +355,7 @@
           var tl = gsap.timeline();
           tl.to(el, { opacity: 1, duration: 0.3, ease: "steps(3)" });
           var st = el.querySelector(".stamp");
-          if (st) tl.to(st, { opacity: 1, scale: 1, rotation: -5, duration: 0.3, ease: "steps(4)" }, "-=0.05");
+          if (st) tl.to(st, { opacity: 1, scale: 1, duration: 0.3, ease: "steps(4)" }, "-=0.05");
         } else {
           gsap.to(el, { opacity: 1, y: 0, duration: 0.5, ease: "steps(6)" });
         }
@@ -369,7 +369,7 @@
         io.unobserve(host);
         gsap.set(host, { opacity: 1, y: 0 });
         var st = host.querySelector(".stamp");
-        if (st) gsap.set(st, { opacity: 1, scale: 1, rotation: -5 });
+        if (st) gsap.set(st, { opacity: 1, scale: 1 });
       }
     });
     // Safety net: never leave content hidden (e.g. print, odd scrolling)
