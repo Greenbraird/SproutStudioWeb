@@ -1,0 +1,7 @@
+# GitHub Pages (Jekyll) — keep non-site files out of the published site.
+# initial-version/ stays in the repo (assignment archive) but is no longer served.
+exclude:
+  - initial-version/
+  - tools/
+  - i18n/
+  - README.md

@@ -1,0 +1,8 @@
+# Note: crawlers only read robots.txt at the domain root (greenbraird.github.io/robots.txt).
+# This file documents intent for the project site; submit the sitemap in Search Console.
+User-agent: *
+Allow: /
+Disallow: /SproutStudioWeb/initial-version/
+Disallow: /SproutStudioWeb/tools/
+
+Sitemap: https://greenbraird.github.io/SproutStudioWeb/sitemap.xml
