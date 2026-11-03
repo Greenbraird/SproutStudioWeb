@@ -10,9 +10,12 @@ Image pipeline used for the 1-bit redesign (run on any machine with Pillow; orig
 - sprout-logo.png -> sprout-logo-78.png (full logo), sprout-mark-78.png (sprout only) in the ORIGINAL colours,
   native 1x pixel grid (the source is an exact 10x grid, so the NEAREST downscale is lossless);
   sprout-mark-39.png (half-size header mark, box-filtered), favicon.ico, favicon-64.png, apple-touch-icon.png
-- wid-logo-clean.png (clean game logo, 556x287, copied as-is) -> .webp, wid-logo-clean-278.png/.webp
-  (2:1 majority-vote INK reduction for phones <640px; interim until a native small logo exists)
-- wishlist-steam.png (688x48 pixel text, copied as-is) -> .webp, wishlist-steam-2line.png/.webp (same pixels, two rows)
+- wid-logo-clean.png (clean game logo, 556x287, INK letters + PAPER outline, copied as-is) -> .webp,
+  wid-logo-clean-278.png/.webp (2:1 majority-vote INK reduction for phones <640px; interim until a native small logo exists)
+- wid-logo-dark.png/.webp, wid-logo-dark-278.png/.webp: same pixel shapes with INK and PAPER swapped
+  (PAPER letters, INK outline) so the logo sits directly on the INK site without a plate;
+  wid-logo-clean-139.png / wid-logo-dark-139.png (second 2:1 step) and sprout-logo-39.png are press-kit preview tiles
+- ico16-*.png (SIGNAL LOOP icons, 16x16 1-bit) are drawn by tools/make_icons.py
 - spr-sniper-sheet.png (copy of the game's SinperAnimations.png, 832x64, 13 frames) -> spr-sniper-64.png/.webp
   (frame 0, 64x64, native pixels + transparency; shown at exact 2x with image-rendering: pixelated)
 - trailer-src.jpg (YouTube hqdefault of KcvhLI1SKCk) -> trailer-thumb.png/.webp (16:9 crop, INK/PAPER threshold)
@@ -61,14 +64,25 @@ def half_ink(im):
     return out
 
 
+def swap_ink_paper(im):
+    """Swap the two opaque colours (INK <-> PAPER) pixel for pixel; transparency and shapes are untouched."""
+    out = im.copy()
+    px = out.load()
+    for y in range(out.height):
+        for x in range(out.width):
+            r, g, b, a = px[x, y]
+            if a:
+                px[x, y] = (PAPER if (r, g, b) == INK else INK if (r, g, b) == PAPER else (r, g, b)) + (a,)
+    return out
+
+
 def og_image(hero):
     """Refresh assets/og-image.png in place: the title text block (x<780, y<416) is kept, the logo box and the
     bottom photo band are fully redrawn, so re-running gives the same result."""
     og = Image.open(A / "og-image.png").convert("RGB")
     W, H = og.size
     og.paste(INK, (780, 0, W, 416))
-    og.paste(PAPER, (800, 54, 1156, 334))  # PAPER plate behind the INK clean logo
-    logo = Image.open(A / "wid-logo-clean-278.png").convert("RGBA")
+    logo = Image.open(A / "wid-logo-dark-278.png").convert("RGBA")  # PAPER letters straight on INK, no plate
     og.paste(logo, (800 + (356 - logo.width) // 2, 54 + (280 - logo.height) // 2), logo)
     band = hero.resize((W, round(W * hero.height / hero.width)), Image.LANCZOS)
     top = round((band.height - (H - 420)) * 0.6)
@@ -103,6 +117,7 @@ def main():
     s = s.crop(s.getbbox())
     logo = s.resize((s.width // 10, s.height // 10), Image.NEAREST)  # source art is an exact 10x grid
     logo.save(A / "sprout-logo-78.png", optimize=True)
+    logo.resize((logo.width // 2, logo.height // 2), Image.BOX).save(A / "sprout-logo-39.png", optimize=True)  # phone preview
     mark = s.crop((0, 0, s.width, 660))
     mark = mark.crop(mark.getbbox())
     mark = mark.resize((mark.width // 10, mark.height // 10), Image.NEAREST)  # 78x66
@@ -123,14 +138,13 @@ def main():
     half.save(A / "wid-logo-clean-278.png", optimize=True)
     half.save(A / "wid-logo-clean-278.webp", lossless=True, exact=True, method=6)
 
-    wl = Image.open(A / "wishlist-steam.png").convert("RGBA")
-    wl.save(A / "wishlist-steam.webp", lossless=True, exact=True, method=6)
-    top, bot = wl.crop((4, 0, 319, wl.height)), wl.crop((352, 0, 680, wl.height))  # "WISHLIST" / "ON STEAM"
-    two = Image.new("RGBA", (max(top.width, bot.width), wl.height * 2 + 8), (0, 0, 0, 0))
-    two.alpha_composite(top, ((two.width - top.width) // 2, 0))
-    two.alpha_composite(bot, ((two.width - bot.width) // 2, wl.height + 8))
-    two.save(A / "wishlist-steam-2line.png", optimize=True)
-    two.save(A / "wishlist-steam-2line.webp", lossless=True, exact=True, method=6)
+    quarter = half_ink(half)  # 139x72, press-kit preview tiles only (shown at 1x)
+    quarter.save(A / "wid-logo-clean-139.png", optimize=True)
+    for name, src in (("wid-logo-dark", w), ("wid-logo-dark-278", half), ("wid-logo-dark-139", quarter)):
+        d = swap_ink_paper(src)
+        d.save(A / f"{name}.png", optimize=True)
+        if not name.endswith("-139"):  # the 139px preview is only linked as PNG
+            d.save(A / f"{name}.webp", lossless=True, exact=True, method=6)
 
     sheet = Image.open(A / "spr-sniper-sheet.png").convert("RGBA")
     sn = sheet.crop((0, 0, 64, 64))  # frame 0 of 13; no resampling

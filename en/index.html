@@ -265,8 +265,8 @@
         <div class="game-grid">
           <figure class="game-logo" data-anim="rise">
             <picture>
-              <source media="(max-width: 639px)" srcset="../assets/wid-logo-clean-278.webp" width="278" height="144" />
-              <img src="../assets/wid-logo-clean.webp" width="556" height="287" alt="War In The Dark logo" data-i18n-attr="alt:game.logoAlt" />
+              <source media="(max-width: 639px)" srcset="../assets/wid-logo-dark-278.webp" width="278" height="144" />
+              <img src="../assets/wid-logo-dark.webp" width="556" height="287" alt="War In The Dark logo" data-i18n-attr="alt:game.logoAlt" />
             </picture>
           </figure>
           <div class="game-intro" data-anim="rise">
@@ -279,12 +279,7 @@
               <div><dt>PRICE</dt><dd data-i18n="game.priceVal">₩6,900 / $5.90</dd></div>
             </dl>
             <p class="game-cta">
-              <a class="btn btn--steam" href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener noreferrer">
-                <picture>
-                  <source media="(min-width: 770px) and (max-width: 1100px)" srcset="../assets/wishlist-steam.webp" width="688" height="48" />
-                  <img src="../assets/wishlist-steam-2line.webp" width="328" height="104" alt="Add to Steam Wishlist" data-i18n-attr="alt:cta.wishlistImgAlt" />
-                </picture>
-              </a>
+              <a class="btn btn--primary btn--lg" href="https://store.steampowered.com/app/4949240/War_In_The_Dark/" target="_blank" rel="noopener noreferrer" data-i18n="cta.wishlist">Wishlist on Steam <span aria-hidden="true">→</span></a>
             </p>
           </div>
         </div>
@@ -382,25 +377,25 @@
         <ol class="loop">
           <li class="loop-step" data-anim="rise">
             <span class="loop-no">01</span>
-            <img class="loop-ico" src="../assets/ico-intercept.webp" width="64" height="64" alt="" />
+            <span class="loop-ico"><img src="../assets/ico16-intercept.png" width="16" height="16" alt="" /></span>
             <h3 data-i18n="sys.01.title">Intercept &amp; gather <span>INTERCEPT</span></h3>
             <p data-i18n="sys.01.body">When interception begins, the decoder turns enemy Morse into letters one by one. You take dictation of the decoded content with <strong>Tap</strong>.</p>
           </li>
           <li class="loop-step" data-anim="rise">
             <span class="loop-no">02</span>
-            <img class="loop-ico" src="../assets/ico-analyze.webp" width="320" height="224" alt="" />
+            <span class="loop-ico"><img src="../assets/ico16-analyze.png" width="16" height="16" alt="" /></span>
             <h3 data-i18n="sys.02.title">Analyze intel <span>ANALYZE</span></h3>
             <p data-i18n="sys.02.body">Interpret the intercepted messages to read the enemy's next move, contact time and frequency.</p>
           </li>
           <li class="loop-step" data-anim="rise">
             <span class="loop-no">03</span>
-            <img class="loop-ico" src="../assets/ico-command.webp" width="128" height="32" alt="" />
+            <span class="loop-ico"><img src="../assets/ico16-command.png" width="16" height="16" alt="" /></span>
             <h3 data-i18n="sys.03.title">Send orders <span>COMMAND</span></h3>
             <p data-i18n="sys.03.body">Using the Morse chart, transmit orders based on what you learned — move allied units or order attacks.</p>
           </li>
           <li class="loop-step" data-anim="rise">
             <span class="loop-no">04</span>
-            <img class="loop-ico" src="../assets/ico-tune.webp" width="290" height="290" alt="" />
+            <span class="loop-ico"><img src="../assets/ico16-tune.png" width="16" height="16" alt="" /></span>
             <h3 data-i18n="sys.04.title">Prepare the next tune <span>TUNE</span></h3>
             <p data-i18n="sys.04.body">Enter the next frequency and time on the radio and clock. Get it wrong and the interception fails; missed intel only partly appears in the intel log.</p>
           </li>
@@ -630,8 +625,9 @@
         <div class="press-assets" data-anim="rise">
           <h3 class="sub-title"><span>DOWNLOADS</span> <span class="sub-local" data-i18n="press.dlNote">Original PNG files · free to use in coverage</span></h3>
           <ul class="dl-grid">
-            <li><a href="../assets/wid-logo-clean.png" download><img src="../assets/wid-logo-clean-278.webp" width="278" height="144" alt="" loading="lazy" class="pixel dl-plate" /><span data-i18n="press.dlGameLogo">Game logo</span> <small>PNG · 556×287</small></a></li>
-            <li><a href="../assets/sprout-logo.png" download><img src="../assets/sprout-logo-78.png" width="78" height="108" alt="" loading="lazy" class="pixel dl-plate" /><span data-i18n="press.dlStudioLogo">Studio logo</span> <small>PNG · 1280×1280</small></a></li>
+            <li><a href="../assets/wid-logo-dark.png" download><img src="../assets/wid-logo-dark-139.png" width="139" height="72" alt="" loading="lazy" class="pixel dl-logo" /><span data-i18n="press.dlGameLogoDark">Game logo — for dark backgrounds</span> <small>PNG · 556×287</small></a></li>
+            <li><a href="../assets/wid-logo-clean.png" download><img src="../assets/wid-logo-clean-139.png" width="139" height="72" alt="" loading="lazy" class="pixel dl-plate" /><span data-i18n="press.dlGameLogoLight">Game logo — for light backgrounds</span> <small>PNG · 556×287</small></a></li>
+            <li><a href="../assets/sprout-logo.png" download><picture><source media="(max-width: 479px)" srcset="../assets/sprout-logo-39.png" width="39" height="54" /><img src="../assets/sprout-logo-78.png" width="78" height="108" alt="" loading="lazy" class="pixel dl-plate" /></picture><span data-i18n="press.dlStudioLogo">Studio logo</span> <small>PNG · 1280×1280</small></a></li>
             <li><a href="../assets/screen-battle.png" download><img src="../assets/screen-battle.webp" width="1006" height="569" alt="" loading="lazy" /><span>Screenshot — Battlefield</span> <small>PNG · 1006×569</small></a></li>
             <li><a href="../assets/screen-radio.png" download><img src="../assets/screen-radio.webp" width="1005" height="566" alt="" loading="lazy" /><span>Screenshot — Radio</span> <small>PNG · 1005×566</small></a></li>
             <li><a href="../assets/screen-clock.png" download><img src="../assets/screen-clock.webp" width="1006" height="566" alt="" loading="lazy" /><span>Screenshot — Clock</span> <small>PNG · 1006×566</small></a></li>

@@ -80,8 +80,8 @@ body {
   overflow-x: hidden;
 }
 img { max-width: 100%; height: auto; display: block; }
-.pixel, .logo-img, .dossier-photo img, .game-logo img, .btn--steam img, .char-portrait img,
-.unit-sprite img, .loop-ico, .story-scene img { image-rendering: pixelated; }
+.pixel, .logo-img, .dossier-photo img, .game-logo img, .char-portrait img,
+.unit-sprite img, .loop-ico img, .story-scene img { image-rendering: pixelated; }
 a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 a:hover { text-decoration-style: dashed; }
 p { margin: 0 0 1em; }
@@ -334,13 +334,9 @@ main:focus-visible { outline: none; }
 .award-work { font-family: var(--f-pixel); font-size: 16px; white-space: nowrap; }
 
 /* ---------- 02 Game ---------- */
-.game-grid { display: grid; grid-template-columns: calc(556px + 32px + 2 * var(--rule)) minmax(0, 1fr); gap: 48px; align-items: start; }
-.game-logo { margin: 0; border: var(--rule) solid var(--paper); padding: 16px; background: var(--paper); justify-self: start; } /* INK letters need a PAPER plate */
+.game-grid { display: grid; grid-template-columns: 556px minmax(0, 1fr); gap: 48px; align-items: start; }
+.game-logo { margin: 0; justify-self: start; } /* PAPER letters with an INK outline: sits straight on the INK section */
 .game-logo img { width: 556px; height: 287px; }
-.btn--steam { padding: 12px; background: var(--paper); border-color: var(--paper); }
-.btn--steam:hover { background: var(--paper); outline: 2px dashed var(--paper); outline-offset: 4px; }
-.btn--steam:active { transform: translateY(2px); }
-.btn--steam img { width: auto; height: auto; }
 .logline { font-family: "Galmuri11", var(--f-head); font-size: 24px; line-height: 1.6; margin-bottom: 28px; }
 .game-cta { margin-top: 28px; }
 .steam-widget { margin: 56px 0 0; max-width: 680px; }
@@ -388,7 +384,8 @@ main:focus-visible { outline: none; }
   content: "→"; position: absolute; right: -22px; top: 24px; font-family: var(--f-pixel); font-size: 16px; z-index: 1;
 }
 .loop-no { font-family: var(--f-pixel); font-size: 32px; display: block; margin-bottom: 12px; }
-.loop-ico { width: 72px; height: 72px; object-fit: contain; padding: 10px; background: var(--paper); border: var(--rule) solid var(--paper); margin-bottom: 16px; }
+.loop-ico { display: flex; align-items: center; justify-content: center; width: 104px; height: 104px; border: 2px solid var(--paper); margin-bottom: 16px; }
+.loop-ico img { width: 64px; height: 64px; } /* 16x16 grid at exactly 4x */
 .loop-step h3 { font-size: 24px; margin-bottom: 12px; }
 
 .control-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
@@ -471,6 +468,8 @@ main:focus-visible { outline: none; }
 .dl-grid a:hover { background: var(--ink); color: var(--paper); }
 .dl-grid img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; background: var(--ink); border: 2px solid var(--ink); }
 .dl-grid img.dl-plate { object-fit: scale-down; background: var(--paper); }
+.dl-grid img.dl-logo { object-fit: scale-down; }
+.dl-grid picture { display: block; }
 .dl-grid span { font-family: var(--f-head); font-weight: 700; }
 .dl-grid small { font-family: var(--f-pixel); font-size: 16px; }
 
@@ -593,13 +592,10 @@ main:focus-visible { outline: none; }
 .cov-meta { display: block; font-family: var(--f-head); font-weight: 700; font-size: 14px; margin-bottom: 2px; }
 .cov-title { font-weight: 700; }
 
-/* ---------- Clean game logo / wishlist pixel text (kept last so they win over the earlier breakpoints) ---------- */
+/* ---------- Clean game logo (kept last so they win over the earlier breakpoints) ---------- */
 @media (max-width: 1100px) {
   .game-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
 }
 @media (max-width: 639px) {
   .game-logo img { width: 278px; height: 144px; } /* 278px reduced asset at 1x */
-}
-@media (max-width: 379px) {
-  .btn--steam { padding: 0; border-width: 0; } /* keep the 328px pixel text at exactly 1x on 360px phones */
 }
