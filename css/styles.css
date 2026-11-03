@@ -114,6 +114,7 @@ main:focus-visible { outline: none; }
   background: var(--paper); color: var(--ink); padding: 10px 16px; font-family: var(--f-head); font-weight: 700;
   border: var(--rule) solid var(--ink); box-shadow: 0 0 0 3px var(--paper);
 }
+.skip-link:not(:focus) { clip-path: inset(50%); } /* keeps the hidden link out of full-page / element captures */
 .skip-link:focus { top: 12px; outline: 3px solid var(--ink); outline-offset: 2px; }
 
 .section--ink { --bg: var(--ink); --fg: var(--paper); background: var(--ink); color: var(--paper); }
@@ -169,7 +170,7 @@ main:focus-visible { outline: none; }
 }
 .nav-no { font-size: 8px; }
 .nav-link:hover { background: var(--paper); color: var(--ink); }
-.nav-link.is-current { background: var(--green); color: var(--ink); }
+.nav-link.is-current { background: var(--paper); color: var(--ink); text-decoration: underline 2px var(--ink); text-underline-offset: 4px; }
 
 .header-tools { display: flex; align-items: center; gap: 12px; flex: 0 0 auto; }
 .lang { display: flex; border: 2px solid var(--paper); }
@@ -433,9 +434,8 @@ main:focus-visible { outline: none; }
 .sw--paper { background: var(--paper); }
 .unit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .unit { border: var(--rule) solid var(--ink); padding: 20px; }
-.unit-sprite { height: 160px; display: flex; align-items: center; justify-content: center; background: var(--paper); margin-bottom: 16px; border: 1px solid var(--ink); }
-.unit-sprite img { height: 128px; width: auto; }
-.unit-sprite--hi img { image-rendering: auto; height: 136px; }
+.unit-sprite { height: 128px; box-sizing: content-box; padding: 16px 0; display: flex; align-items: center; justify-content: center; background: var(--paper); margin-bottom: 16px; border: 1px solid var(--ink); }
+.unit-sprite img { height: 128px; width: auto; } /* exact 2x of the 64px-tall native sprites: 64x128, 80x128, 128x128 */
 .unit-name { font-size: 24px; margin-bottom: 8px; }
 .unit-trait { min-height: 3.4em; }
 .unit-stats > div { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-top: 2px dotted var(--ink); }

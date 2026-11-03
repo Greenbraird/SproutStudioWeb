@@ -1,7 +1,7 @@
 # 새싹 스튜디오 (Sprout Studio) — Website
 
 1인 개발자 **김시준**의 인디 게임 스튜디오 **새싹 스튜디오**와 대표작 **War In The Dark**를 소개하는 정적 사이트입니다.
-디자인: **1-bit 냉전 콘셉트** — INK `#222323` / PAPER `#F0F6F0` 두 색만 사용(대비 14.4:1), 기밀문서 도장 · 전신 용지 · 무전 다이얼 모티프, 픽셀 폰트.
+디자인: **1-bit 냉전 콘셉트** — INK `#222323` / PAPER `#F0F6F0` 두 색 중심(대비 14.4:1), 게임 팔레트 액센트 SIGNAL RED `#C8352B`·PHOSPHOR `#5FD068`을 5% 이하로 사용, 기밀문서 도장 · 전신 용지 · 무전 다이얼 모티프, 픽셀 폰트.
 
 배포: GitHub Pages (`main` 브랜치 루트, Jekyll 기본 빌드) → https://greenbraird.github.io/SproutStudioWeb/
 
