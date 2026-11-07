@@ -447,11 +447,11 @@ main:focus-visible { outline: none; }
 .tl { display: grid; grid-template-columns: 200px minmax(0, 1fr) 220px; gap: 24px; align-items: start; padding: 24px 0; border-top: 2px dashed var(--paper); }
 .tl:last-child { border-bottom: 2px dashed var(--paper); }
 .tl-date { font-family: var(--f-pixel); font-size: 24px; }
-.tl-body h3 { font-family: var(--f-pixel); font-weight: 700; font-size: 24px; margin-bottom: 8px; }
+.tl-body h3 { font-family: var(--f-pixel); font-weight: 700; font-size: 24px; line-height: 1.35; margin-bottom: 8px; }
 .tl-body p { margin: 0; }
-.tl-status { justify-self: end; font-family: var(--f-head); font-weight: 700; border: 2px solid var(--paper); padding: 4px 10px; text-align: center; }
+.tl-status { justify-self: end; max-width: 100%; font-family: var(--f-head); font-weight: 700; border: 2px solid var(--paper); padding: 4px 10px; text-align: center; line-height: 1.4; }
 .tl--past .tl-date { text-decoration: line-through; text-decoration-thickness: 3px; }
-.tl--past .tl-status { border-style: dashed; }
+.tl--past .tl-status, .tl--done .tl-status { border-style: dashed; }
 .tl--now { box-shadow: none; border-left: 4px solid var(--green); padding-left: 12px; padding-right: 16px; margin: 0 -16px; }
 .tl--now .tl-status { border-color: var(--green); color: var(--green); display: inline-flex; align-items: center; gap: 8px; }
 .tl--now .tl-status::before { content: ""; width: 8px; height: 8px; background: var(--green); flex: 0 0 auto; animation: led 1s steps(1, end) infinite; }
